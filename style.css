@@ -25,3 +25,19 @@ body {
   margin-left: 4px;
   letter-spacing: 2px;
 }
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
