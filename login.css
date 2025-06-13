@@ -7,12 +7,16 @@ body {
 .navbar {
   padding: 25px 60px;
   background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px; 
 }
 
 .logo {
   font-size: 30px;
   font-weight: bold;
   color: #1d1d1f;
+  text-decoration: none;
 }
 
 .logo span {
@@ -26,14 +30,14 @@ body {
   letter-spacing: 2px;
 }
 
-.signup-section {
+.login-section {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 80px 20px;
 }
 
-.signup-box {
+.login-box {
   background-color: white;
   padding: 40px;
   border-radius: 20px;
@@ -42,18 +46,18 @@ body {
   max-width: 400px;
 }
 
-.signup-box h2 {
+.login-box h2 {
   margin-bottom: 20px;
   color: #1d1d1f;
   text-align: center;
 }
 
-.signup-box form {
+.login-box form {
   display: flex;
   flex-direction: column;
 }
 
-.signup-box input {
+.login-box input {
   padding: 12px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
@@ -61,7 +65,7 @@ body {
   font-size: 14px;
 }
 
-.signup-box button {
+.login-box button {
   background-color: #758bfd;
   color: white;
   padding: 12px;
@@ -72,17 +76,17 @@ body {
   transition: transform 0.3s ease;
 }
 
-.signup-box button:hover {
+.login-box button:hover {
   transform: translateY(-4px);
 }
 
-.login-link {
+.signup-link {
   text-align: center;
   margin-top: 16px;
   font-size: 14px;
 }
 
-.login-link a {
+.signup-link a {
   color: #2d4bf0;
   text-decoration: none;
 }
