@@ -85,3 +85,12 @@ background: linear-gradient(to bottom right, #e6f4fb, #dbeafe);
 .back-arrow:hover {
   transform: translateX(-4px);
 }
+
+body {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
