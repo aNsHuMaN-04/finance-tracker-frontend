@@ -71,6 +71,12 @@ nav ul li a:hover {
   color: #2d4bf0;
 }
 
+.signup-btn:hover {
+  background-color: #a6c4f2;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
 
 .hero-section {
   display: flex;
@@ -107,6 +113,12 @@ nav ul li a:hover {
   margin-top: 20px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #627de3;  /* slightly darker than original */
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 .hero-image {
