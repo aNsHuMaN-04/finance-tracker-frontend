@@ -63,20 +63,24 @@ body {
   font-size: 14px;
 }
 
-.signup-box button {
+.signup-box .fake-button {
+  display: inline-block;
   background-color: #758bfd;
   color: white;
   padding: 12px;
-  border: none;
   border-radius: 18px;
   font-size: 16px;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
-.signup-box button:hover {
+.signup-box .fake-button:hover {
   transform: translateY(-4px);
 }
+
 
 .login-link {
   text-align: center;
