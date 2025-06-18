@@ -18,21 +18,27 @@ body {
 }
 
 .logo {
-  font-size: 30px;
-  font-weight: bold;
-  color: #1d1d1f;
-  text-decoration: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.logo span {
-  color: #2d4bf0;
+.big-letter {
+  font-size: 80px;
+  font-weight: 700;
+  color: #3a4dff;
+  line-height: 1;
 }
 
-.logo small {
-  font-size: 12px;
-  color: #2d4bf0;
-  margin-left: 4px;
-  letter-spacing: 2px;
+.small-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1a18a7;
+  letter-spacing: 5px;
+  margin-bottom: 6px;
 }
 
 .back-arrow {
