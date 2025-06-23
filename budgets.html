@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budgets | Finance Tracker</title>
+  <link rel="stylesheet" href="budget.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="big-letter">f</span><span class="small-text">inance</span>
+      <span class="big-letter">t</span><span class="small-text">racker</span>
+    </div>
+    <ul class="nav-links">
+      <li><i class="fas fa-home"></i><a href="#">Dashboard</a></li>
+      <li><i class="fas fa-bars"></i><a href="#">Transactions</a></li>
+      <li class="active"><i class="fas fa-dollar-sign"></i><a href="#">Budgets</a></li>
+      <li><i class="fas fa-bullseye"></i><a href="#">Goals</a></li>
+      <li><i class="fas fa-chart-bar"></i><a href="#">Reports</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <h1>Budgets</h1>
+    <p class="subtitle">Set and track your spending limits for different categories.</p>
+
+    <section class="budget-table">
+      <h2>Current Budget</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Budget</th>
+            <th>Spent</th>
+            <th>Remaining</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Groceries</td>
+            <td>$500</td>
+            <td>$350</td>
+            <td>$150</td>
+            <td><div class="bar blue" style="width: 70%"></div> 70%</td>
+          </tr>
+          <tr>
+            <td>Dining Out</td>
+            <td>$300</td>
+            <td>$200</td>
+            <td>$100</td>
+            <td><div class="bar blue" style="width: 75%"></div> 75%</td>
+          </tr>
+          <tr>
+            <td>Entertainment</td>
+            <td>$200</td>
+            <td>$100</td>
+            <td>$100</td>
+            <td><div class="bar blue" style="width: 50%"></div> 50%</td>
+          </tr>
+          <tr>
+            <td>Shopping</td>
+            <td>$400</td>
+            <td>$500</td>
+            <td>-$100</td>
+            <td><div class="bar red" style="width: 25%"></div> 25%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="add-budget">
+      <h2>Add new budget</h2>
+      <form>
+        <label>Category</label>
+        <select>
+          <option>Select category</option>
+          <option>Groceries</option>
+          <option>Dining Out</option>
+          <option>Entertainment</option>
+          <option>Shopping</option>
+        </select>
+
+        <label>Budget Amount</label>
+        <input type="number" placeholder="Enter amount" />
+
+        <button type="submit">Add Budget</button>
+      </form>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>
