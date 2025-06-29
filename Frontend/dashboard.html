@@ -2,59 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard | Finance Tracker</title>
-  <link rel="stylesheet" href="dashboard.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budgets | Finance Tracker</title>
+  <link rel="stylesheet" href="addExpenses.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar">
-  <div class="logo">
-  <span class="big-letter">f</span><span class="small-text">inance</span>
-  <span class="big-letter">t</span><span class="small-text">racker</span>
-</div>
-</header>
 
-  <div class="dashboard-container">
-    <aside class="sidebar">
-      <div class="profile">
-        <img src="assets/profile.png" alt="Profile" class="profile-img" />
-        <p>Hello, Anshuman</p>
-      </div>
-      <ul class="sidebar-menu">
-        <li class="active">
-          <img src="assets/dashboard-icon.png" class="icon" />
-          Dashboard
-        </li>
-        <li>
-          <img src="assets/add-icon.png" class="icon" />
-          Add Expense
-        </li>
-        <li>
-          <img src="assets/reports-icon.png" class="icon" />
-          View Reports
-        </li>
-        <li>
-          <img src="assets/settings-icon.png" class="icon" />
-          Settings
-        </li>
-      </ul>
-    </aside>
+<div class="container">
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="big-letter">f</span><span class="small-text">inance</span>
+      <span class="big-letter">t</span><span class="small-text">racker</span>
+    </div>
+    <ul class="nav-links">
+      <li class="active"><i class="fas fa-home"></i><a href="dashboard.html">Dashboard</a></li>
+      <li><i class="fas fa-bars"></i><a href="budgets.html">Budgets</a></li>
+      <li><i class="fas fa-dollar-sign"></i><a href="addExpenses.html">Add Expenses</a></li>
+      <li><i class="fas fa-bullseye"></i><a href="#">Goals</a></li>
+      <li><i class="fas fa-chart-bar"></i><a href="#">Reports</a></li>
+    </ul>
+  </aside>
 
-    <main class="main-content">
-      <h1>Dashboard</h1>
-      <p>Welcome to your finance tracker. Track, plan, and manage your expenses easily.</p>
 
-      <div class="dashboard-welcome-box">
-        <h2>Your Weekly Summary</h2>
-        <ul>
-          <li>💸 Total Spent: ₹3,500</li>
-          <li>📈 Top Category: Food & Groceries</li>
-          <li>🎯 Budget Status: 70% used</li>
-        </ul>
-      </div>
-    </main>
+
+
   </div>
+
 </body>
 </html>
