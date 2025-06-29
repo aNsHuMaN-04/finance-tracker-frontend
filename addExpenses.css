@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #e6f4fb;
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  display: flex;
+}
+
+
+.sidebar {
+  width: 230px;
+  background-color: #e6f4fb;
+  padding: 30px 20px;
+  min-height: 100vh;
+  background-color: #f1f7fc;  
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  font-family: 'Orbitron', sans-serif;
+  gap: 6px;
+  margin-bottom: 40px;
+}
+
+.big-letter {
+  font-size: 48px;
+  font-weight: 700;
+  color: #201f92;
+  line-height: 1;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #201f92;
+  margin-bottom: 6px;
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+.nav-links li.active {
+  background-color: #dcdcdc;
+  font-weight: bold;
+}
+
+.nav-links li i {
+  font-size: 16px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+.content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.expense-form input,
+.expense-form select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.buttons button[type="button"] {
+  background-color: #ccc;
+}
+
+.buttons button[type="submit"] {
+  background-color: #3b5bdb;
+  color: white;
+}
+
+
+.expense-form input::placeholder {
+  font-family: 'Georgia', serif;
+  color: #888; /* placeholder lighter grey */
+}
+
+.expense-form select {
+  font-family: 'Georgia', serif;
+  color: #555; /* normal text grey for selects */
+}
