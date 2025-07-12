@@ -1,0 +1,11 @@
+# Ignore node_modules
+Backend/node_modules/
+Frontend/node_modules/
+
+# Ignore environment and credentials
+*.env
+Backend/credentials.json
+
+# Ignore OS and editor files
+.DS_Store
+.vscode/
