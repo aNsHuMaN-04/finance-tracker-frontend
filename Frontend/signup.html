@@ -22,17 +22,17 @@
 <main class="signup-section">
   <div class="signup-box">
     <h2>Create Your Account</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="password" placeholder="Password" required />
-      <input type="password" placeholder="Confirm Password" required />
-      <a href="dashboard.html" class="fake-button">Sign Up</a>
-
+    <form id="signup-form">
+  <input type="text" id="fullName" placeholder="Full Name" required />
+  <input type="email" id="email" placeholder="Email Address" required />
+  <input type="password" id="password" placeholder="Password" required />
+  <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+  <button type="submit" class="fake-button">Sign Up</button>
     </form>
+
     <p class="login-link">Already have an account? <a href="login.html">Sign in</a></p>
   </div>
 </main>
-
+<script src="signup.js"></script>
 </body>
 </html>
