@@ -23,6 +23,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
     const result = await response.json();
 
     if (response.ok) {
+      localStorage.setItem('userEmail', email); // ✅ Save email before redirect
       alert("Signup successful!");
       window.location.href = 'dashboard.html'; 
     } else {

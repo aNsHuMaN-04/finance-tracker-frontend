@@ -49,7 +49,31 @@ async function findUserByEmail(emailToFind) {
   return null;
 }
 
+
+async function saveExpenseToSheet(data) {
+  const client = await auth.getClient();
+  const sheets = google.sheets({ version: 'v4', auth: client });
+
+  const values = [[
+    data.email,
+    data.amount,
+    data.category,
+    data.date,
+    data.paymentMode,
+    data.dayOfWeek || ''
+  ]];
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId,
+    range: 'Expenses!A1',
+    valueInputOption: 'USER_ENTERED',
+    resource: { values }
+  });
+}
+
+
 module.exports = {
   addUserToSheet,
   findUserByEmail,
+  saveExpenseToSheet
 };

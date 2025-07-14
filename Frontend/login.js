@@ -16,6 +16,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
     const result = await response.json();
 
     if (response.ok) {
+      localStorage.setItem('userEmail', email); // ✅ Save email before redirect
       alert('Login successful!');
       window.location.href = 'dashboard.html';
     } else {

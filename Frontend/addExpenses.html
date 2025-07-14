@@ -27,48 +27,63 @@
 
   <main class="content">
   <h1>Add Expense</h1>
-  <form class="expense-form">
-    <input type="number" placeholder="Amount" required />
+ <form class="expense-form" id="expense-form">
+  <input type="number" id="amount" placeholder="Amount" required />
 
-    <select required>
-      <option value="" disabled selected>Category</option>
-      <option value="food">Food</option>
-      <option value="travel">Travel</option>
-      <option value="shopping">Shopping</option>
-      <option value="utilities">Utilities</option>
-      <option value="other">Other</option>
-    </select>
+  <select id="category" required>
+    <option value="" disabled selected>Category</option>
+    <option value="food">Food</option>
+    <option value="travel">Travel</option>
+    <option value="shopping">Shopping</option>
+    <option value="utilities">Utilities</option>
+    <option value="other">Other</option>
+  </select>
 
-    <input type="date" required />
+  <input type="date" id="date" required />
 
-    <select required>
-      <option value="" disabled selected>Payment Mode</option>
-      <option value="cash">Cash</option>
-      <option value="upi">UPI</option>
-      <option value="card">Card</option>
-    </select>
+  <select id="paymentMode" required>
+    <option value="" disabled selected>Payment Mode</option>
+    <option value="cash">Cash</option>
+    <option value="upi">UPI</option>
+    <option value="card">Card</option>
+  </select>
 
-    <select>
-      <option value="" disabled selected>Day of Week (optional)</option>
-      <option value="sunday">Sunday</option>
-      <option value="monday">Monday</option>
-      <option value="tuesday">Tuesday</option>
-      <option value="wednesday">Wednesday</option>
-      <option value="thursday">Thursday</option>
-      <option value="friday">Friday</option>
-      <option value="saturday">Saturday</option>
-    </select>
+  <select id="dayOfWeek">
+    <option value="" disabled selected>Day of Week (optional)</option>
+    <option value="sunday">Sunday</option>
+    <option value="monday">Monday</option>
+    <option value="tuesday">Tuesday</option>
+    <option value="wednesday">Wednesday</option>
+    <option value="thursday">Thursday</option>
+    <option value="friday">Friday</option>
+    <option value="saturday">Saturday</option>
+  </select>
 
-    <div class="buttons">
-      <button type="button">Cancel</button>
-      <button type="submit">Save</button>
-    </div>
-  </form>
+  <div class="buttons">
+    <button type="button" onclick="window.location.href='dashboard.html'">Cancel</button>
+    <button type="submit">Save</button>
+  </div>
+</form>
+
 </main>
 
-
-
   </div>
+<div id="message-box" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: green;
+  color: white;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  font-family: sans-serif;
+  z-index: 1000;
+"></div>
+
+<script src="addExpenses.js"></script>
 
 </body>
 </html>
