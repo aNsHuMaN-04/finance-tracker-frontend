@@ -49,7 +49,6 @@ async function findUserByEmail(emailToFind) {
   return null;
 }
 
-
 async function saveExpenseToSheet(data) {
   const client = await auth.getClient();
   const sheets = google.sheets({ version: 'v4', auth: client });
@@ -71,9 +70,34 @@ async function saveExpenseToSheet(data) {
   });
 }
 
+async function getExpensesByEmail(emailToFind) {
+  const client = await auth.getClient();
+  const sheets = google.sheets({ version: 'v4', auth: client });
+
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId,
+    range: 'Expenses!A2:F',
+  });
+
+  const rows = response.data.values || [];
+
+  const filtered = rows
+    .filter(row => row[0] === emailToFind)
+    .map(row => ({
+      email: row[0],
+      amount: row[1],
+      category: row[2],
+      date: row[3],
+      paymentMode: row[4],
+      dayOfWeek: row[5] || ''
+    }));
+
+  return filtered;
+}
 
 module.exports = {
   addUserToSheet,
   findUserByEmail,
-  saveExpenseToSheet
+  saveExpenseToSheet,
+  getExpensesByEmail
 };
