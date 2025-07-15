@@ -27,67 +27,21 @@
 
   <main class="content">
     <h1>Budgets</h1>
-    <p class="subtitle">Set and track your spending limits for different categories.</p>
-
-    <section class="budget-table">
-      <h2>Current Budget</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Budget</th>
-            <th>Spent</th>
-            <th>Remaining</th>
-            <th>Progress</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Groceries</td>
-            <td>$500</td>
-            <td>$350</td>
-            <td>$150</td>
-            <td><div class="bar blue" style="width: 70%"></div> 70%</td>
-          </tr>
-          <tr>
-            <td>Dining Out</td>
-            <td>$300</td>
-            <td>$200</td>
-            <td>$100</td>
-            <td><div class="bar blue" style="width: 75%"></div> 75%</td>
-          </tr>
-          <tr>
-            <td>Entertainment</td>
-            <td>$200</td>
-            <td>$100</td>
-            <td>$100</td>
-            <td><div class="bar blue" style="width: 50%"></div> 50%</td>
-          </tr>
-          <tr>
-            <td>Shopping</td>
-            <td>$400</td>
-            <td>$500</td>
-            <td>-$100</td>
-            <td><div class="bar red" style="width: 25%"></div> 25%</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <p class="subtitle">Set your monthly budget for each category.</p>
 
     <section class="add-budget">
-      <h2>Add new budget</h2>
-      <form>
-        <label>Category</label>
-        <select>
-          <option>Select category</option>
+      <form id="budget-form">
+        <label for="category">Category</label>
+        <select id="category" required>
+          <option value="" disabled selected>Select category</option>
           <option>Groceries</option>
           <option>Dining Out</option>
           <option>Entertainment</option>
           <option>Shopping</option>
         </select>
 
-        <label>Budget Amount</label>
-        <input type="number" placeholder="Enter amount" />
+        <label for="amount">Budget Amount</label>
+        <input type="number" id="amount" placeholder="Enter amount" required />
 
         <button type="submit">Add Budget</button>
       </form>
@@ -95,5 +49,6 @@
   </main>
 </div>
 
+<script src="budgets.js"></script>
 </body>
 </html>

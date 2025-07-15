@@ -14,13 +14,11 @@ body {
   display: flex;
 }
 
-
 .sidebar {
   width: 230px;
-  background-color: #e6f4fb;
+  background-color: #f1f7fc;
   padding: 30px 20px;
   min-height: 100vh;
-  background-color: #f1f7fc;  
 }
 
 .logo {
@@ -75,7 +73,6 @@ body {
   color: #333;
 }
 
-
 .content {
   flex: 1;
   padding: 40px;
@@ -85,42 +82,16 @@ body {
   margin: 0;
   font-size: 32px;
   color: #1d1d1f;
-  background-color: #e6f4fb; 
+  background-color: #e6f4fb;
 }
 
 .subtitle {
   color: #666;
-  margin-bottom: 30px;
-}
-
-.budget-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: white;
-  border: 2px solid #3a4dff;
-}
-
-.budget-table th,
-.budget-table td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-
-.bar {
-  display: inline-block;
-  height: 10px;
-  background-color: #3a4dff;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.bar.red {
-  background-color: #d84848;
+  margin-bottom: 20px;
 }
 
 .add-budget {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .add-budget form {
@@ -148,29 +119,4 @@ body {
 
 .add-budget button:hover {
   transform: translateY(-3px);
-}
-
-.progress-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.bar {
-  width: 140px;
-  height: 10px;
-  background-color: #3a4dff;
-  border-radius: 4px;
-  margin-right: 0;
-}
-
-.bar.red {
-  background-color: #d84848;
-}
-
-.percentage-text {
-  font-size: 14px;
-  font-weight: 500;
-  color: #1d1d1f;
 }
