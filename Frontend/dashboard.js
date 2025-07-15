@@ -24,7 +24,7 @@ async function loadExpenses() {
       `;
       tbody.appendChild(tr);
 
-      const category = expense.category;
+      const category = expense.category.toLowerCase(); // 🔁 normalize
       const amount = parseFloat(expense.amount);
 
       if (!isNaN(amount)) {
@@ -32,19 +32,48 @@ async function loadExpenses() {
       }
     });
 
-    renderChart(categoryTotals);
+    renderExpenseChart(categoryTotals);
+    loadBudgetsAndRenderChart(categoryTotals);
 
   } catch (error) {
     console.error("Failed to load expenses:", error);
   }
 }
 
-function renderChart(categoryTotals) {
+async function loadBudgetsAndRenderChart(spentTotals) {
+  try {
+    const response = await fetch("http://localhost:3000/budget/user?email=" + encodeURIComponent(email));
+    const budgets = await response.json();
+
+    const userBudgets = {};
+    budgets.forEach(row => {
+      const category = row.category.toLowerCase(); // 🔁 normalize
+      const amount = parseFloat(row.amount);
+      if (!isNaN(amount)) {
+        userBudgets[category] = amount;
+      }
+    });
+
+    const categories = Object.keys(userBudgets);
+    const budgetsArr = categories.map(cat => userBudgets[cat]);
+    const spentArr = categories.map(cat => spentTotals[cat] || 0);
+
+    renderBudgetChart(categories, budgetsArr, spentArr);
+  } catch (err) {
+    console.error("Error loading budgets:", err);
+  }
+}
+
+function renderExpenseChart(categoryTotals) {
   const ctx = document.getElementById('expenseChart').getContext('2d');
   const labels = Object.keys(categoryTotals);
   const values = Object.values(categoryTotals);
 
-  new Chart(ctx, {
+  if (window.expenseChartInstance) {
+    window.expenseChartInstance.destroy();
+  }
+
+  window.expenseChartInstance = new Chart(ctx, {
     type: 'pie',
     data: {
       labels: labels,
@@ -60,13 +89,45 @@ function renderChart(categoryTotals) {
     options: {
       responsive: true,
       plugins: {
-        legend: {
-          position: 'right'
+        legend: { position: 'right' },
+        title: { display: true, text: 'Expenses by Category' }
+      }
+    }
+  });
+}
+
+function renderBudgetChart(categories, budgets, spent) {
+  const ctx = document.getElementById('budgetChart').getContext('2d');
+
+  if (window.budgetChartInstance) {
+    window.budgetChartInstance.destroy();
+  }
+
+  window.budgetChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: categories,
+      datasets: [
+        {
+          label: 'Budget',
+          data: budgets,
+          backgroundColor: 'rgba(52, 152, 219, 0.6)'
         },
-        title: {
-          display: true,
-          text: 'Expenses by Category'
+        {
+          label: 'Spent',
+          data: spent,
+          backgroundColor: 'rgba(231, 76, 60, 0.6)'
         }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'top' },
+        title: { display: true, text: 'Budget vs Spent' }
+      },
+      scales: {
+        y: { beginAtZero: true }
       }
     }
   });
